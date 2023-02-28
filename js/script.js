@@ -1,4 +1,5 @@
-import cpfField from "./validateCpf";
+import cpfField from "./validateCpf.js";
+import ofLegalAge from "./validadeAge.js";
 const formFields = document.querySelectorAll("[required]");
 
 formFields.forEach((field) => {
@@ -10,6 +11,9 @@ const checkField = (field) => {
     if (field.name == 'cpf' && field.value.length >= 11){
         cpfField(field);
     };
+    if (field.name == "aniversario" && field.value != "") {
+        ofLegalAge(field);
+    }
 };
 
 
