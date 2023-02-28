@@ -4,7 +4,7 @@ const formFields = document.querySelectorAll("[required]");
 
 formFields.forEach((field) => {
     field.addEventListener('blur', () => checkField(field));
-   
+    field.addEventListener("invalid", e => e.preventDefault())
 })
 
 const checkField = (field) => {
